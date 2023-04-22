@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Item = (id, description, precio, image) => {
+export const Item = ({id, description, precio, image}) => {
     return (
         <div>
             <h3>Id:{id}</h3>

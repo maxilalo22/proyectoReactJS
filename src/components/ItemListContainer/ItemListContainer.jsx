@@ -4,7 +4,7 @@ import { ItemList } from '../ItemList/ItemList';
 
 export const Principal = (props) => {
 
-    const [items, setItems] = useState({})
+    const [items, setItems] = useState([])
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
@@ -12,7 +12,7 @@ export const Principal = (props) => {
         pedirProductos()
             .then((res) => {
                 setItems(res)
-                console.log(res)
+                console.log(setItems)
             })
             .catch((error) => console.log(error))
             .finally(() => { setLoading(false) })

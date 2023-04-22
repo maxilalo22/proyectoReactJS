@@ -3,12 +3,12 @@ import {Item} from "../Item/Item"
 
 
 
-export const ItemList = ({stock=[]}) => {
+export const ItemList = ({productos=[]}) => {
     return (
         <div>
 
             
-            {stock.map((item) => <Item{...item} key={item.id}/>)}
+            {productos.map((item) => <Item{...item} key={item.id}/>)}
 
 
         </div>
