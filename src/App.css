@@ -22,6 +22,38 @@ body{
 .contItemList{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items:center;
     text-align: center;
+}
+.contItemList img{
+    width: 160px;
+    height: 160px;
+}
+.contProd{
+    margin: 20px;
+}
+
+.fila{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.estiloCard{
+    display: flex;
+    align-items: center;
+    margin: 8px;
+    background-image: url(../public/hermoso-fondo-blanco-formas-lineas-doradas_1017-27145.avif);
+}
+
+.cardTitle{
+    font-weight: bolder;
+    font-style: oblique;
+    color:black
+}
+
+.cardPrice{
+    color: darkgoldenrod;
+    font-weight:800;
+    
 }
