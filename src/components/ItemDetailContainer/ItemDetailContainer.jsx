@@ -27,10 +27,11 @@ export const ItemDetailContainer = () => {
 
     return (
         <section>
-
-            loading
+            
+            {loading
             ?<Spinner animation="border" />
-            :<ItemDetails {...item}/>
+            :<ItemDetails {...item}/>}
+            
 
 
         </section>

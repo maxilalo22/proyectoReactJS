@@ -34,11 +34,9 @@ export const Principal = (props) => {
         <>
         <div className='principal'></div>
         <div className='contItemList'>
-            {
-                loading
+            {loading
                     ? <Spinner animation="border" />
-                    : <ItemList productos={items} />
-            }
+                    : <ItemList productos={items} />}
         </div>
         </>
     )
