@@ -26,7 +26,7 @@ export const ItemDetailContainer = () => {
 
 
     return (
-        <section>
+        <section className='contItemList'>
             
             {loading
             ?<Spinner animation="border" />

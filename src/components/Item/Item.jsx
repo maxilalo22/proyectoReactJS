@@ -2,7 +2,7 @@ import React from 'react'
 import {Card, Button} from "react-bootstrap"
 import {Link} from "react-router-dom"
 
-export const Item = ({ id, description, precio, image }) => {
+export const Item = ({ id,name, description, precio, image }) => {
     return (
         <div>
             <Card className='estiloCard' style={{ width: '18rem' }}>

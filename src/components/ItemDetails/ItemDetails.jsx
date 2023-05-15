@@ -50,6 +50,7 @@ export const ItemDetails = ({ id, description, precio, image, stock }) => {
 
                 </Card.Body>
                 <Button variant="outline-secondary" onClick={volverHaciaAtras}>Volver atrás</Button>{' '}
+                <Link to='/cart' className='btn btn-info'>Ir al carrito</Link>
             </Card>
 
 
