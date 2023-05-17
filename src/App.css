@@ -9,8 +9,6 @@ body{
     background-position:center;
     background-repeat: no-repeat;
     height: 300px;
-    
-    
 }
 .contCart{
     display: flex;
@@ -72,5 +70,5 @@ body{
 }
 
 .form-control{
-   width: 450px; 
+    width: 450px; 
 }

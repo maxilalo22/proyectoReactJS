@@ -4,21 +4,22 @@ import { Card, Button } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 import { ItemCount } from '../ItemCount/ItemCount'
 import { CartContext } from '../context/CartContext'
+import Swal from 'sweetalert2'
 
 
 
 export const ItemDetails = ({ id, description, precio, image, stock }) => {
 
     const navigate = useNavigate()
-    const volverHaciaAtras = () =>{
+    const volverHaciaAtras = () => {
         navigate(-1)
     }
 
-    const {addToCart} = useContext(CartContext)
+    const { addToCart } = useContext(CartContext)
 
     const [counter, setCounter] = useState(0)
 
-    const sumarAlCarrito = () =>{
+    const sumarAlCarrito = () => {
         const newItem = {
             id,
             description,
@@ -28,6 +29,12 @@ export const ItemDetails = ({ id, description, precio, image, stock }) => {
         }
         console.log(newItem)
         addToCart(newItem)
+        Swal.fire({
+            icon: 'success',
+            title: 'Producto agregado al carrito',
+            showConfirmButton: false,
+            timer: 1000
+        })
     }
 
 
@@ -39,18 +46,18 @@ export const ItemDetails = ({ id, description, precio, image, stock }) => {
                 <Card.Body>
                     <Card.Title className='cardTitle'>{description}</Card.Title>
                     <Card.Title className='cardPrice'>${precio}</Card.Title>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolores excepturi 
-                        perferendis facilis corporis, ex sit explicabo maiores? Exercitationem quo adipisci minus 
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolores excepturi
+                        perferendis facilis corporis, ex sit explicabo maiores? Exercitationem quo adipisci minus
                         corporis, quod inventore id tempore incidunt reprehenderit pariatur!</p>
-                    <ItemCount max={stock} modify={setCounter} cantidad={counter}/>
+                    <ItemCount max={stock} modify={setCounter} cantidad={counter} />
                     <Link to={`/detail/${id}`}>
                         <Button variant="primary" onClick={sumarAlCarrito}>Agregar al Carrito</Button>
-                        
+
                     </Link>
 
                 </Card.Body>
                 <Button variant="outline-secondary" onClick={volverHaciaAtras}>Volver atrás</Button>{' '}
-                <Link to='/cart' className='btn btn-info'>Ir al carrito</Link>
+                <Link to='/cart' className='btn btn-warning'>Ir al carrito</Link>
             </Card>
 
 

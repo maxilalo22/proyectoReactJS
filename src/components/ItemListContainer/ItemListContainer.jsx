@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-/* import { pedirProductos } from "../../helpers/pedirProductos" */
 import { ItemList } from '../ItemList/ItemList';
 import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from 'react-router-dom';
@@ -15,9 +14,9 @@ export const Principal = (props) => {
 
     useEffect(() => {
         const db = getFirestore();
-
+    
         const productos = db.collection('productos')
-
+    
         if (categoryId) {
             const filtrado = productos.where("category", "==", categoryId)
             filtrado.get()
@@ -28,10 +27,10 @@ export const Principal = (props) => {
                     setItems(newItem)
                 })
                 .catch((error) => console.log(error))
-                .finaly(() => {
+                .finally(() => {
                     setLoading(false)
                 })
-
+    
         } else {
             productos.get()
                 .then((res) => {
@@ -44,23 +43,7 @@ export const Principal = (props) => {
                 .catch((err) => console.log(err))
                 .finally(() => { setLoading(false) })
         }
-    }), [categoryId]
-    /*  useEffect(() => {
-         setLoading(true)
-         pedirProductos()
-             .then((res) => {
-                 if (categoryId){
-                     setItems(res.filter(prod => prod.category === categoryId))
-                 }else{
-                     setItems(res)
-                 }
-                 
-             })
-             .catch((error) => console.log(error))
-             .finally(() => { setLoading(false) })
-     }, [categoryId])
-  */
-
+    }, [categoryId])
 
     return (
         <>
